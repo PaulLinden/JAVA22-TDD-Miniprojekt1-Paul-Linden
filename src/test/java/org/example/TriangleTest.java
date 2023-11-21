@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -115,6 +116,7 @@ public class TriangleTest {
     }
 
     @Test
+    @DisplayName("ConstructorNonNumberException")
     public void testConstructorWithNonNumberException() {
         String[] input = new String[]{"a", "a", "a"};
         assertThrows(NumberFormatException.class, () -> new Triangle(input));
