@@ -13,6 +13,24 @@ public class TriangleTest {
     Triangle triangle;
 
     @Test
+    public void testSCALENEStringValue(){
+        Triangle.TYPE scalene = Triangle.TYPE.SCALENE;
+        assertEquals("SCALENE",scalene.toString());
+    }
+
+    @Test
+    public void testEQUILATERALStringValue(){
+        Triangle.TYPE equilateral = Triangle.TYPE.EQUILATERAL;
+        assertEquals("EQUILATERAL",equilateral.toString());
+    }
+
+    @Test
+    public void testISOSCELESStringValue(){
+        Triangle.TYPE isosceles = Triangle.TYPE.ISOSCELES;
+        assertEquals("ISOSCELES",isosceles.toString());
+    }
+
+    @Test
     public void testInvalidInputWithChar() {
         String[] input = {"a", "4", "5"};
         triangle = new Triangle(input);
