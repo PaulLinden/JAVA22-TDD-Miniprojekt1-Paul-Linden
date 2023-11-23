@@ -3,8 +3,7 @@ package org.example;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -138,6 +137,34 @@ public class TriangleTest {
     public void testConstructorWithNonNumberException() {
         String[] input = new String[]{"a", "a", "a"};
         assertThrows(NumberFormatException.class, () -> new Triangle(input));
+    }
+
+    @Test
+    public void testOutputScalene() {
+
+        triangle = new Triangle(3,4,5);
+        String expectedOutput = "3, 4, 5, This is a Scalene triangle";
+        String output = triangle.toString();
+
+        assertEquals(expectedOutput,output);
+    }
+
+    @Test
+    public void testOutputIsosceles() {
+        triangle = new Triangle(3,3,5);
+        String expectedOutput = "3, 3, 5, This is a Isosceles triangle";
+        String output = triangle.toString();
+
+        assertEquals(expectedOutput,output);
+    }
+
+    @Test
+    public void testOutputEquilateral() {
+        triangle = new Triangle(3,3,3);
+        String expectedOutput = "3, 3, 3, This is a Equilateral triangle";
+        String output = triangle.toString();
+
+        assertEquals(expectedOutput,output);
     }
 
     //Util
